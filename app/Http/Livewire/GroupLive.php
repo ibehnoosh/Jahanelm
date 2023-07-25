@@ -4,9 +4,9 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\BasicInfo\Category;
+use App\Models\BasicInfo\Group;
 use Livewire\Component;
-use App\Models\Group;
-use App\Models\Category;
 use Livewire\WithPagination;
 
 class GroupLive extends Component

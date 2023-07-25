@@ -1,9 +1,9 @@
 <?php
 namespace App\Http\Livewire;
 
+use App\Models\BasicInfo\Group;
+use App\Models\BasicInfo\Level;
 use Livewire\Component;
-use App\Models\Level;
-use App\Models\Group;
 use Livewire\WithPagination;
 
 class LevelLive extends Component

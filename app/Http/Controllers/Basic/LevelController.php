@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Basic;
 
 use App\Http\Controllers\Controller;
-use App\Models\Group;
-use App\Models\Level;
+use App\Models\BasicInfo\Group;
+use App\Models\BasicInfo\Level;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;

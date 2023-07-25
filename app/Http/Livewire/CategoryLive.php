@@ -2,9 +2,8 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\BasicInfo\Category;
 use Livewire\Component;
-use App\Models\Category;
-use Illuminate\Validation\Rule;
 
 class CategoryLive extends Component
 {
