@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\CategoryLive;
 use App\Http\Livewire\GroupLive;
+use App\Http\Livewire\LevelLive;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,4 +22,4 @@ Route::get('/', function () {
 
 Route::get('/category', CategoryLive::class)->name('category');
 Route::get('/group', GroupLive::class)->name('group');
-Route::get('/level', CategoryLive::class)->name('level');
+Route::get('/level', LevelLive::class)->name('level');

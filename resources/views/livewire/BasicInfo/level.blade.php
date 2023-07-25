@@ -3,41 +3,41 @@
         <form wire:submit.prevent="{{ $editing ? 'update' : 'store' }}">
                     <div>
                         <label for="title">Title:</label>
-                        <input type="text" wire:model="title">
+                        <input class="form-control form-control-solid" type="text" wire:model="title">
                         @error('title') <span class="error">{{ $message }}</span> @enderror
                     </div>
 
                     <div>
                         <label for="comment">Comment:</label>
-                        <input type="text" wire:model="comment">
+                        <input class="form-control form-control-solid" type="text" wire:model="comment">
                         @error('comment') <span class="error">{{ $message }}</span> @enderror
                     </div>
 
                     <div>
                         <label for="is_active">Is Active:</label>
-                        <input type="checkbox" wire:model="is_active">
+                        <input class="" type="checkbox" wire:model="is_active">
                     </div>
 
                     <div>
                         <label for="order">Order:</label>
-                        <input type="number" wire:model="order">
+                        <input class="form-control form-control-solid" type="number" wire:model="order">
                         @error('order') <span class="error">{{ $message }}</span> @enderror
                     </div>
 
                     <div>
-                        <label for="category_id">Category:</label>
-                        <select wire:model="category_id">
-                            <option value="">Select Category</option>
-                            @foreach($categories as $category)
-                                <option value="{{ $category->id }}">{{ $category->title }}</option>
+                        <label for="group_id">Category:</label>
+                        <select class="form-control form-control-solid" wire:model="group_id">
+                            <option value="">Select Group</option>
+                            @foreach($groups as $group)
+                                <option value="{{ $group->id }}">{{ $group->title }}</option>
                             @endforeach
                         </select>
                         @error('category_id') <span class="error">{{ $message }}</span> @enderror
                     </div>
 
-                    <button type="submit">{{ $editing ? 'Update' : 'Create' }} Group</button>
+                    <button class="btn btn-primary" type="submit">{{ $editing ? 'Update' : 'Create' }} Level</button>
                     @if($editing)
-                        <button type="button" wire:click="cancelEdit">Cancel</button>
+                        <button class="btn btn-light-primary" type="button" wire:click="cancelEdit">Cancel</button>
                     @endif
 
         </form>
@@ -47,6 +47,7 @@
             <thead>
             <tr class="fw-bold text-muted bg-light">
                 <th>Title</th>
+                <th>Group</th>
                 <th>Category</th>
                 <th>Is active</th>
                 <th>Order</th>
@@ -54,30 +55,33 @@
             </tr>
             </thead>
             <tbody>
-            @foreach($groups as $group)
+            @foreach($levels as $level)
                 <tr>
-                    <td>{{ $group->title }}
-                        <span class="text-muted fw-semibold text-muted d-block fs-7">{{ $group->comment }}</span>
+                    <td>{{ $level->title }}
+                        <span class="text-muted fw-semibold text-muted d-block fs-7">{{ $level->comment }}</span>
                     </td>
                     <td>
-                        {{ $group->category->title }}
+                        {{ $level->group->title }}
                     </td>
                     <td>
-                        {{ $group->is_active }}
+                        {{ $level->group->category->title }}
                     </td>
                     <td>
-                        {{ $group->order }}
+                        {{ $level->is_active }}
                     </td>
                     <td>
-                        <button wire:click="edit({{ $group->id }})">Edit</button>
-                        <button wire:click="delete({{ $group->id }})">Delete</button>
+                        {{ $level->order }}
+                    </td>
+                    <td>
+                        <button wire:click="edit({{ $level->id }})">Edit</button>
+                        <button wire:click="delete({{ $level->id }})">Delete</button>
                     </td>
                 </tr>
             @endforeach
             </tbody>
         </table>
     <div>
-        {{ $groups->links() }}
+        {{ $levels->links() }}
     </div>
     </div>
 
