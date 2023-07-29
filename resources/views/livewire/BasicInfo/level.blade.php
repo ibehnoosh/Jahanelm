@@ -1,4 +1,4 @@
-<div class="card-body py-3">
+<div class="card-body">
     <div>
         <form wire:submit.prevent="{{ $editing ? 'update' : 'store' }}">
                     <div>

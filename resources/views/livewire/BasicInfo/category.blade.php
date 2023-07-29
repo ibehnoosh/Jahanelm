@@ -1,40 +1,54 @@
-<div class="card-body py-3">
-    <div>
+<div class="row>
+    <div class="col-md-4 offset-md-8">
         <form wire:submit.prevent="{{ $editingCategoryId ? 'update' : 'store' }}">
-            <input type="text" wire:model="title" placeholder="Title">
-            <input type="text" wire:model="comment" placeholder="Comment">
-            <input type="checkbox" wire:model="is_active"> Is Active?
-            <input type="checkbox" wire:model="has_private"> Has Private?
-
-            <button type="submit">
-                {{ $editingCategoryId ? 'Update Category' : 'Create Category' }}
-            </button>
+            <div class="form-row align-items-end">
+                <div class="col-md-6">
+                    <input type="text" wire:model="title" placeholder="Title">
+                </div>
+                <div class="col-md-6">
+                    <input type="text" wire:model="comment" placeholder="Comment">
+                </div>
+                <div class="col-md-6">
+                    <input type="checkbox" wire:model="is_active"> Is Active?
+                </div>
+                <div class="col-md-6">
+                    <input type="checkbox" wire:model="has_private"> Has Private?
+                </div>
+                <div class="col-md-6">
+                    <button type="submit">
+                        {{ $editingCategoryId ? 'Update Category' : 'Create Category' }}
+                    </button>
+                </div>
+            </div>
         </form>
     </div>
-    <div class="table-responsive">
-        <table class="table align-middle gs-0 gy-4">
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered">
             <thead>
-            <tr class="fw-bold text-muted bg-light">
-                <th class="min-w-125px">Title</th>
-                <th class="min-w-200px">Is active</th>
-                <th class="min-w-150px">Has private</th>
-                <th class="min-w-200px text-end rounded-end"></th>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Is active</th>
+                <th scope="col">Has private</th>
+                <th scope="col">Operation</th>
             </tr>
             </thead>
             <tbody>
+
             @foreach($categories as $category)
                 <tr>
-                    <td>
-                        <a href="#" class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6"> {{ $category->title }} </a>
+                    <td> {{ $category->title }}
                         <span class="text-muted fw-semibold text-muted d-block fs-7">{{ $category->comment }}</span>
                     </td>
 
                     <td>
-                        <a href="#" class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6"> {{ $category->is_active }} </a>
+                        {{ $category->is_active }}
                     </td>
 
                     <td>
-                        <a href="#" class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6"> {{ $category->has_private }} </a>
+                        {{ $category->has_private }}
                     </td>
                     <td>
                         <button wire:click="edit({{ $category->id }})">Edit</button>
@@ -45,7 +59,4 @@
             </tbody>
         </table>
     </div>
-
-
-
 </div>
