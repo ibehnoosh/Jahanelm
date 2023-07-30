@@ -3,6 +3,7 @@
 use App\Http\Livewire\BankLive;
 use App\Http\Livewire\CategoryLive;
 use App\Http\Livewire\CenterLive;
+use App\Http\Livewire\ClassStateLive;
 use App\Http\Livewire\GroupLive;
 use App\Http\Livewire\LevelLive;
 use App\Http\Livewire\LocateLive;
@@ -29,3 +30,4 @@ Route::get('/level', LevelLive::class)->name('level');
 Route::get('/bank', BankLive::class)->name('bank');
 Route::get('/center', CenterLive::class)->name('center');
 Route::get('/locate', LocateLive::class)->name('locate');
+Route::get('/class_state', ClassStateLive::class)->name('classState');

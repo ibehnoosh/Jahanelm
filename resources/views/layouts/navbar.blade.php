@@ -13,6 +13,7 @@
                     <li><a class="dropdown-item" href="{{ route('category') }}">دوره ها</a></li>
                     <li><a class="dropdown-item" href="{{ route('group') }}">گروه ها</a></li>
                     <li><a class="dropdown-item" href="{{ route('level') }}">سطح ها</a></li>
+                    <li><a class="dropdown-item" href="{{ route('classState') }}">وضعیت کلاس ها</a></li>
                     <li><a class="dropdown-item" href="{{ route('locate') }}">محل برگزاری کلاس ها</a></li>
                 </ul>
             </li>
