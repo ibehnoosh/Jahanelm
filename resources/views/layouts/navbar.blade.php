@@ -13,7 +13,9 @@
                     <li><a class="dropdown-item" href="{{ route('category') }}">دوره ها</a></li>
                     <li><a class="dropdown-item" href="{{ route('group') }}">گروه ها</a></li>
                     <li><a class="dropdown-item" href="{{ route('level') }}">سطح ها</a></li>
+                    <li><a class="dropdown-item" href="{{ route('hour') }}">ساعت ها</a></li>
                     <li><a class="dropdown-item" href="{{ route('classState') }}">وضعیت کلاس ها</a></li>
+                    <li><a class="dropdown-item" href="{{ route('termState') }}">انواع ترم ها</a></li>
                     <li><a class="dropdown-item" href="{{ route('locate') }}">محل برگزاری کلاس ها</a></li>
                 </ul>
             </li>
@@ -21,6 +23,7 @@
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> حسابداری </a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="{{ route('bank') }}">بانک ها</a></li>
+                    <li><a class="dropdown-item" href="{{ route('bankAccount') }}">حساب های بانکی</a></li>
                 </ul>
             </li>
         </ul>

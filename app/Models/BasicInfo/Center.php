@@ -11,4 +11,8 @@ class Center extends Model
     protected $fillable = [
         'title',
     ];
+    public function bankAccounts()
+    {
+        return $this->hasMany(BankAccount::class);
+    }
 }
