@@ -5,6 +5,7 @@ use App\Http\Livewire\CategoryLive;
 use App\Http\Livewire\CenterLive;
 use App\Http\Livewire\GroupLive;
 use App\Http\Livewire\LevelLive;
+use App\Http\Livewire\LocateLive;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,3 +28,4 @@ Route::get('/group', GroupLive::class)->name('group');
 Route::get('/level', LevelLive::class)->name('level');
 Route::get('/bank', BankLive::class)->name('bank');
 Route::get('/center', CenterLive::class)->name('center');
+Route::get('/locate', LocateLive::class)->name('locate');

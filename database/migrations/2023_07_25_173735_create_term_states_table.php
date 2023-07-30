@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('term_states', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('color' , '6');
             $table->timestamps();
         });
     }
