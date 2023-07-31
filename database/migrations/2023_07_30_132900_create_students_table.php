@@ -14,9 +14,13 @@ return new class extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->integer('id')->primary();
             $table->string('name');
+            $table->string('name_en');
             $table->string('family');
-            $table->string('meli', 10)->nullable()->unique();
+            $table->string('family_en');
+            $table->string('meli', 10)->nullable();
+            $table->string('passport', 10)->nullable();
             $table->string('father')->nullable();
+            $table->string('father_en')->nullable();
             $table->string('mother')->nullable();
             $table->string('gender', 1);
             $table->string('city')->nullable();
@@ -25,6 +29,7 @@ return new class extends Migration
             $table->string('tel', 15)->nullable();
             $table->string('address')->nullable();
             $table->string('email')->nullable();
+            $table->string('card','16')->nullable();
             $table->string('mobile', 10);
             $table->string('picture')->nullable();
             $table->string('meli_picture')->nullable();
@@ -33,6 +38,7 @@ return new class extends Migration
             $table->dateTime('last_login')->nullable();
             $table->integer('count_login')->default(0);
             $table->string('birth', 4)->nullable();
+            $table->string('birth_en', 4)->nullable();
             $table->string('password')->invisible();
 
             $table->unsignedBigInteger('center_id');
