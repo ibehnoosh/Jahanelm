@@ -1,30 +1,30 @@
 <?php
 
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\BasicInfo;
 
-use App\Models\BasicInfo\ClassState;
+use App\Models\BasicInfo\Center;
 use Livewire\Component;
 
-class ClassStateLive extends Component
+class CenterLive extends Component
 {
-    public $classStates, $title, $selectedClassState, $updateMode = false;
+    public $centers, $title, $selectedCenter, $updateMode = false;
 
     protected $rules = [
-        'title' => 'required|string|unique:class_states,title',
+        'title' => 'required|string|unique:Centers,title',
     ];
 
     public function render()
     {
-        $this->classStates = ClassState::all();
-        return view('livewire.BasicInfo.class_state');
+        $this->centers = Center::all();
+        return view('livewire.BasicInfo.center');
     }
 
     public function create()
     {
         $this->validate();
 
-        ClassState::create([
+        Center::create([
             'title' => $this->title,
         ]);
 
@@ -34,15 +34,15 @@ class ClassStateLive extends Component
     public function edit($id)
     {
         $this->updateMode = true;
-        $this->selectedClassState = ClassState::find($id);
-        $this->title = $this->selectedClassState->title;
+        $this->selectedCenter = Center::find($id);
+        $this->title = $this->selectedCenter->title;
     }
 
     public function update()
     {
         $this->validate();
 
-        $this->selectedClassState->update([
+        $this->selectedCenter->update([
             'title' => $this->title,
         ]);
 
@@ -51,7 +51,7 @@ class ClassStateLive extends Component
 
     public function delete($id)
     {
-        ClassState::find($id)->delete();
+        Center::find($id)->delete();
         $this->resetForm();
     }
 

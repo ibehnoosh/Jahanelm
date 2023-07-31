@@ -1,62 +1,65 @@
-<div class="row>
-    <div class="col-md-4 offset-md-8">
-        <form wire:submit.prevent="{{ $editingCategoryId ? 'update' : 'store' }}">
-            <div class="form-row align-items-end">
-                <div class="col-md-6">
-                    <input type="text" wire:model="title" placeholder="Title">
-                </div>
-                <div class="col-md-6">
-                    <input type="text" wire:model="comment" placeholder="Comment">
-                </div>
-                <div class="col-md-6">
-                    <input type="checkbox" wire:model="is_active"> Is Active?
-                </div>
-                <div class="col-md-6">
-                    <input type="checkbox" wire:model="has_private"> Has Private?
-                </div>
-                <div class="col-md-6">
-                    <button type="submit">
-                        {{ $editingCategoryId ? 'Update Category' : 'Create Category' }}
-                    </button>
-                </div>
+<div class="card-body">
+    <div>
+        <form wire:submit.prevent="{{ $editing ? 'update' : 'store' }}">
+            <div>
+                <label for="title">Title:</label>
+                <input class="form-control form-control-solid" type="text" wire:model="title">
+                @error('title') <span class="error">{{ $message }}</span> @enderror
             </div>
+
+            <div>
+                <label for="comment">Comment:</label>
+                <input class="form-control form-control-solid" type="text" wire:model="comment">
+                @error('comment') <span class="error">{{ $message }}</span> @enderror
+            </div>
+
+            <div>
+                <label for="is_active">Is Active:</label>
+                <input class="" type="checkbox" wire:model="is_active">
+            </div>
+
+            <div>
+                <label for="has_private">Has Private:</label>
+                <input class="" type="checkbox" wire:model="has_private">
+            </div>
+
+            <button class="btn btn-primary" type="submit">{{ $editing ? 'Update' : 'Create' }} Level</button>
+            @if($editing)
+                <button class="btn btn-light-primary" type="button" wire:click="cancelEdit">Cancel</button>
+            @endif
+
         </form>
     </div>
-</div>
-
-<div class="row">
-    <div class="col-md-12">
-        <table class="table table-bordered">
+    <div class="table-responsive">
+        <table class="table align-middle gs-0 gy-4">
             <thead>
-            <tr>
-                <th scope="col">Title</th>
-                <th scope="col">Is active</th>
-                <th scope="col">Has private</th>
-                <th scope="col">Operation</th>
+            <tr class="fw-bold text-muted bg-light">
+                <th>Title</th>
+                <th>Is active</th>
+                <th>Has Private</th>
+                <th>Action</th>
             </tr>
             </thead>
             <tbody>
-
             @foreach($categories as $category)
                 <tr>
-                    <td> {{ $category->title }}
+                    <td>{{ $category->title }}
                         <span class="text-muted fw-semibold text-muted d-block fs-7">{{ $category->comment }}</span>
                     </td>
-
                     <td>
                         {{ $category->is_active }}
                     </td>
-
                     <td>
                         {{ $category->has_private }}
                     </td>
                     <td>
                         <button wire:click="edit({{ $category->id }})">Edit</button>
-                        <button wire:click="destroy({{ $category->id }})">Delete</button>
+                        <button wire:click="delete({{ $category->id }})">Delete</button>
                     </td>
                 </tr>
             @endforeach
             </tbody>
         </table>
     </div>
+
 </div>

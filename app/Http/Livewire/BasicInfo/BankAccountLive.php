@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\BasicInfo;
 
 use App\Models\BasicInfo\Bank;
 use App\Models\BasicInfo\BankAccount;

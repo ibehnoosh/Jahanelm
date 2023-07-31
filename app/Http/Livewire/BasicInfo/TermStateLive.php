@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\BasicInfo;
 
 use App\Models\BasicInfo\TermState;
 use Livewire\Component;

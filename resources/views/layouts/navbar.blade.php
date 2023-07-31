@@ -26,6 +26,13 @@
                     <li><a class="dropdown-item" href="{{ route('bankAccount') }}">حساب های بانکی</a></li>
                 </ul>
             </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> دانشجو </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{{ route('student') }}">مشخصات دانشجو</a></li>
+                    <li><a class="dropdown-item" href="{{ route('bankAccount') }}">حساب های بانکی</a></li>
+                </ul>
+            </li>
         </ul>
 
     </div> <!-- navbar-collapse.// -->

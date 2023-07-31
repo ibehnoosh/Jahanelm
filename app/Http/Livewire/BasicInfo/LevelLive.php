@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\BasicInfo;
 
 use App\Models\BasicInfo\Group;
 use App\Models\BasicInfo\Level;
@@ -62,7 +62,7 @@ class LevelLive extends Component
         $this->emit('levelCreated');
     }
 
-    public function edit($id)
+    public function edit(int $id)
     {
         $level = Level::findOrFail($id);
 

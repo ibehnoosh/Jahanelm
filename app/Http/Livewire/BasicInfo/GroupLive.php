@@ -2,7 +2,7 @@
 
 // app/Http/Livewire/GroupController.php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\BasicInfo;
 
 use App\Models\BasicInfo\Category;
 use App\Models\BasicInfo\Group;

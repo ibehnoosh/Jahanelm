@@ -1,15 +1,17 @@
 <?php
 
-use App\Http\Livewire\BankAccountLive;
-use App\Http\Livewire\BankLive;
-use App\Http\Livewire\CategoryLive;
-use App\Http\Livewire\CenterLive;
-use App\Http\Livewire\ClassStateLive;
-use App\Http\Livewire\GroupLive;
-use App\Http\Livewire\HourLive;
-use App\Http\Livewire\LevelLive;
-use App\Http\Livewire\LocateLive;
-use App\Http\Livewire\TermStateLive;
+use App\Http\Livewire\BasicInfo\BankAccountLive;
+use App\Http\Livewire\BasicInfo\BankLive;
+use App\Http\Livewire\BasicInfo\CategoryLive;
+use App\Http\Livewire\BasicInfo\CenterLive;
+use App\Http\Livewire\BasicInfo\ClassStateLive;
+use App\Http\Livewire\BasicInfo\GroupLive;
+use App\Http\Livewire\BasicInfo\HourLive;
+use App\Http\Livewire\BasicInfo\LevelLive;
+use App\Http\Livewire\BasicInfo\LocateLive;
+use App\Http\Livewire\BasicInfo\TermStateLive;
+use App\Http\Livewire\Users\StudentLive;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,3 +39,5 @@ Route::get('/locate', LocateLive::class)->name('locate');
 Route::get('/hour', HourLive::class)->name('hour');
 Route::get('/class_state', ClassStateLive::class)->name('classState');
 Route::get('/term_state', TermStateLive::class)->name('termState');
+
+Route::get('/student', StudentLive::class)->name('student');

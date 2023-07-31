@@ -1,30 +1,30 @@
 <?php
 
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\BasicInfo;
 
-use App\Models\BasicInfo\Bank;
+use App\Models\BasicInfo\ClassState;
 use Livewire\Component;
 
-class BankLive extends Component
+class ClassStateLive extends Component
 {
-    public $banks, $title, $selectedBank, $updateMode = false;
+    public $classStates, $title, $selectedClassState, $updateMode = false;
 
     protected $rules = [
-        'title' => 'required|string|unique:banks,title',
+        'title' => 'required|string|unique:class_states,title',
     ];
 
     public function render()
     {
-        $this->banks = Bank::all();
-        return view('livewire.BasicInfo.bank');
+        $this->classStates = ClassState::all();
+        return view('livewire.BasicInfo.class_state');
     }
 
     public function create()
     {
         $this->validate();
 
-        Bank::create([
+        ClassState::create([
             'title' => $this->title,
         ]);
 
@@ -34,15 +34,15 @@ class BankLive extends Component
     public function edit($id)
     {
         $this->updateMode = true;
-        $this->selectedBank = Bank::find($id);
-        $this->title = $this->selectedBank->title;
+        $this->selectedClassState = ClassState::find($id);
+        $this->title = $this->selectedClassState->title;
     }
 
     public function update()
     {
         $this->validate();
 
-        $this->selectedBank->update([
+        $this->selectedClassState->update([
             'title' => $this->title,
         ]);
 
@@ -51,7 +51,7 @@ class BankLive extends Component
 
     public function delete($id)
     {
-        Bank::find($id)->delete();
+        ClassState::find($id)->delete();
         $this->resetForm();
     }
 

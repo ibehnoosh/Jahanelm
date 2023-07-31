@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\BasicInfo;
 
 use App\Models\BasicInfo\Category;
 use Livewire\Component;
@@ -13,6 +13,7 @@ class CategoryLive extends Component
     public $is_active = false;
     public $has_private = false;
     public $editingCategoryId = null;
+    public $editing = false;
 
     public function render()
     {
@@ -32,11 +33,14 @@ class CategoryLive extends Component
     public function edit($id)
     {
         $category = Category::findOrFail($id);
+
         $this->editingCategoryId = $category->id;
         $this->title = $category->title;
         $this->comment = $category->comment;
         $this->is_active = $category->is_active;
         $this->has_private = $category->has_private;
+
+        $this->editing = true;
     }
 
     public function update()
@@ -49,10 +53,13 @@ class CategoryLive extends Component
         $this->resetForm();
     }
 
-    public function destroy($id)
+    public function delete($id)
     {
         $category = Category::findOrFail($id);
         $category->delete();
+
+        $this->resetForm();
+        $this->emit('Category Deleted');
     }
 
     private function validateCategory()
@@ -71,6 +78,6 @@ class CategoryLive extends Component
         $this->comment = '';
         $this->is_active = false;
         $this->has_private = false;
-        $this->editingCategoryId = null;
+        $this->editing = false;
     }
 }

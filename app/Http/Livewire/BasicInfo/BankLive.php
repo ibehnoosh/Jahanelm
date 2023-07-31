@@ -1,30 +1,30 @@
 <?php
 
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\BasicInfo;
 
-use App\Models\BasicInfo\Center;
+use App\Models\BasicInfo\Bank;
 use Livewire\Component;
 
-class CenterLive extends Component
+class BankLive extends Component
 {
-    public $centers, $title, $selectedCenter, $updateMode = false;
+    public $banks, $title, $selectedBank, $updateMode = false;
 
     protected $rules = [
-        'title' => 'required|string|unique:Centers,title',
+        'title' => 'required|string|unique:banks,title',
     ];
 
     public function render()
     {
-        $this->centers = Center::all();
-        return view('livewire.BasicInfo.center');
+        $this->banks = Bank::all();
+        return view('livewire.BasicInfo.bank');
     }
 
     public function create()
     {
         $this->validate();
 
-        Center::create([
+        Bank::create([
             'title' => $this->title,
         ]);
 
@@ -34,15 +34,15 @@ class CenterLive extends Component
     public function edit($id)
     {
         $this->updateMode = true;
-        $this->selectedCenter = Center::find($id);
-        $this->title = $this->selectedCenter->title;
+        $this->selectedBank = Bank::find($id);
+        $this->title = $this->selectedBank->title;
     }
 
     public function update()
     {
         $this->validate();
 
-        $this->selectedCenter->update([
+        $this->selectedBank->update([
             'title' => $this->title,
         ]);
 
@@ -51,7 +51,7 @@ class CenterLive extends Component
 
     public function delete($id)
     {
-        Center::find($id)->delete();
+        Bank::find($id)->delete();
         $this->resetForm();
     }
 
