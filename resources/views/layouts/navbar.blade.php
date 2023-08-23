@@ -33,6 +33,12 @@
                     <li><a class="dropdown-item" href="{{ route('studentSearch') }}">لیست دانشجویان</a></li>
                 </ul>
             </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> اساتید </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{{ route('teachers') }}">لیست اساتید</a></li>
+                </ul>
+            </li>
         </ul>
 
     </div> <!-- navbar-collapse.// -->

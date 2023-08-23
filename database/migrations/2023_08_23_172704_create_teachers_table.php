@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('mobile', 10);
             $table->dateTime('last_login')->nullable();
             $table->integer('count_login')->default(0);
-            $table->string('password')->invisible();
+            $table->string('password')->invisible()->nullable();
 
             $table->timestamps();
         });
