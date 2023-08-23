@@ -51,4 +51,5 @@ class StudentSearchLive extends Component
     {
         $this->resetPage();
     }
+
 }

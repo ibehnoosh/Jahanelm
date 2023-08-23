@@ -24,7 +24,7 @@
                 <td>{{ $student->mobile }}</td>
                 <td>{{ $student->meli }}</td>
                 <td>
-                    <button wire:click="editStudent({{ $student->id }})">Edit</button>
+                    <a href="{{ route('studentEdit', ['studentId' => $student->id]) }}">Edit</a>
                     <button wire:click="resetPassword({{ $student->id }})">Reset Password</button>
                 </td>
             </tr>
@@ -35,3 +35,5 @@
     {{ $students->links() }}
 
 </div>
+
+

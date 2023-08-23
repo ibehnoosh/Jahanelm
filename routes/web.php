@@ -11,6 +11,7 @@ use App\Http\Livewire\BasicInfo\LevelLive;
 use App\Http\Livewire\BasicInfo\LocateLive;
 use App\Http\Livewire\BasicInfo\TermStateLive;
 use App\Http\Livewire\Users\StudentAddLive;
+use App\Http\Livewire\Users\StudentEditLive;
 use App\Http\Livewire\Users\StudentSearchLive;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
@@ -40,5 +41,15 @@ Route::get('/locate', LocateLive::class)->name('locate');
 Route::get('/hour', HourLive::class)->name('hour');
 Route::get('/class_state', ClassStateLive::class)->name('classState');
 Route::get('/term_state', TermStateLive::class)->name('termState');
-Route::get('/student_add', StudentAddLive::class)->name('studentAdd');
-Route::get('/student_search', StudentSearchLive::class)->name('studentSearch');
+
+Route::prefix('students')->group(function () {
+    Route::get('/', StudentSearchLive::class)->name('studentSearch');
+    Route::get('/create', StudentAddLive::class)->name('studentAdd');
+    Route::get('/{studentId}/edit', StudentEditLive::class)->name('studentEdit');
+});
+
+Route::prefix('teachers')->group(function () {
+    Route::get('/', StudentSearchLive::class)->name('teachers');
+    Route::get('/create', StudentAddLive::class)->name('teacherAdd');
+    Route::get('/{teacherId}/edit', StudentEditLive::class)->name('teacherEdit');
+});
