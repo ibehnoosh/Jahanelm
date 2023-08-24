@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Models\BasicInfo;
+namespace App\Models\Accounting;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ClassState extends Model
+class Discount extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'title',
-    ];
+    protected $guarded = [];
 }

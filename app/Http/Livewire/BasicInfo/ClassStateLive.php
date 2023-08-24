@@ -3,7 +3,7 @@
 
 namespace App\Http\Livewire\BasicInfo;
 
-use App\Models\BasicInfo\ClassState;
+use App\Models\Education\ClassState;
 use Livewire\Component;
 
 class ClassStateLive extends Component

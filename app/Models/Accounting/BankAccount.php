@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Models\BasicInfo;
+namespace App\Models\Accounting;
 
+use App\Models\BasicInfo\Center;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;

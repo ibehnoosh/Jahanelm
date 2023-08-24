@@ -3,7 +3,7 @@
 
 namespace App\Http\Livewire\BasicInfo;
 
-use App\Models\BasicInfo\TermState;
+use App\Models\Education\TermState;
 use Livewire\Component;
 
 class TermStateLive extends Component

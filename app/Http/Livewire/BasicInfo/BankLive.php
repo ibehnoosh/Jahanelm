@@ -3,7 +3,7 @@
 
 namespace App\Http\Livewire\BasicInfo;
 
-use App\Models\BasicInfo\Bank;
+use App\Models\Accounting\Bank;
 use Livewire\Component;
 
 class BankLive extends Component

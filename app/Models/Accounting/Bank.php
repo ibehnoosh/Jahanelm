@@ -1,15 +1,19 @@
 <?php
 
-namespace App\Models\BasicInfo;
+namespace App\Models\Accounting;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TermState extends Model
+class Bank extends Model
 {
     use HasFactory;
     protected $fillable = [
         'title',
-        'color',
     ];
+
+    public function bankAccounts()
+    {
+        return $this->hasMany(BankAccount::class);
+    }
 }

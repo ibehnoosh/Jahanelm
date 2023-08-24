@@ -4,7 +4,7 @@
         <input type="text" wire:model="name" placeholder="TeacherName ">
         @error('name') <span class="error">{{ $message }}</span> @enderror
 
-        <input type="text" wire:model="family" placeholder="Teacherfamily ">
+        <input type="text" wire:model="family" placeholder="Teacher family ">
         @error('family') <span class="error">{{ $message }}</span> @enderror
 
         <input type="text" wire:model="father" placeholder="Teacher Father">

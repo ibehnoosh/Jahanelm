@@ -2,8 +2,8 @@
 
 namespace App\Http\Livewire\BasicInfo;
 
-use App\Models\BasicInfo\Bank;
-use App\Models\BasicInfo\BankAccount;
+use App\Models\Accounting\Bank;
+use App\Models\Accounting\BankAccount;
 use App\Models\BasicInfo\Center;
 use Livewire\Component;
 
