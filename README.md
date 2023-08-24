@@ -4,11 +4,12 @@ This is a simple Laravel application for managing categories and groups. It allo
 
 ## Features
 
-- [x] Create, Read, Update, and Delete (CRUD) operations for Categories
-- [x] Create, Read, Update, and Delete (CRUD) operations for Groups
-- [x] Create, Read, Update, and Delete (CRUD) operations for levels
-- [ ] Search functionality to find specific Categories or Groups or level
-- [ ] Sorting options for Categories and Groups list
+- [x] CRUD , Search, Filter operations for Categories
+- [x] CRUD , Search, Filter operations for Groups
+- [x] CRUD , Search, Filter operations for levels
+- [x] CRUD , Search, Filter operations for Teachers
+- [x] CRUD , Search, Filter operations for Students
+- [x] CRUD , Search, Filter operations for Accounting ( Bank account , Discount)
 - [ ] User authentication and authorization
 - [ ] User roles and permissions management
 
